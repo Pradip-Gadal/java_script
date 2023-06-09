@@ -261,4 +261,65 @@ console.log(myArray)
 
 //## Muniplate Arrays with unshift()
 
+var myArray = ["pradip", "is", "Happy"]
+myArray.shift()
+myArray.unshift("pramila")
+console.log(myArray)
+
+var myArray = [["apple", 12],["country, 19"]]
+myArray.shift()
+myArray.unshift(["ball",3])
+console.log(myArray)
+
+//## Shoping List
+var myList = [["cereal", 3], ["milk", 2], ["banana", 24],
+["egg", 24],["potato", 2]]
+
+//##Write Reusable Code with Functions
+function ourReusableFunction() {
+    console.log("hello! world");
+}
+ourReusableFunction();
+
+function reuseableFunction() {
+    console.log("how are you?");
+}
+
+reuseableFunction();
+
+//##Passing Values to Functions with Arguments
+
+function OurFunctionWithArgs(a,b) {
+    console.log(a + b);
+}
+
+OurFunctionWithArgs(10, 5);
+
+function MyFunctionWithArgs(a,b) {
+    console.log(`my name is ${a} ${b}`);
+}
+MyFunctionWithArgs("pradip", "gadal");
+
+//##Global Scope and Functions
+
+var Globalvar = 10;
+
+function decleareAnotherVar() {
+    withoutVar = 5;
+}
+
+function TryGlobalVar() {
+    output = "";
+    if (typeof Globalvar != "undefined"){
+        output += `GlobalVar = ${Globalvar}\n\t`; 
+    }
+
+    if (typeof withoutVar != "undefined") {
+        output += `withVar = ${withoutVar}`;
+    }
+    console.log(output)
+}
+
+decleareAnotherVar();
+TryGlobalVar();
 
