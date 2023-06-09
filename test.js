@@ -745,3 +745,182 @@ console.log(output)
 
  //# java script object:
 
+var myinfo = {
+    "first_name" : "pradip",
+    "last_name": "gadal",
+    "address": "belbari",
+}
+
+var sisInfo = {
+    "first_name" : "pramila",
+    "last_name" : "gadal",
+    "address" : "kathmandu",
+}
+
+var yourname = `${myinfo.first_name} ${myinfo.last_name}`
+var sisname = `${sisInfo.first_name} ${sisInfo.last_name}`
+
+console.log(`${yourname}\n\t${sisname}`)
+console.log(`${myinfo["address"]}`)
+
+var pointer = {
+    1 : "maize",
+    2 : "coconut",
+    3 : "apple",
+    4 : "car",
+}
+
+console.log(pointer[1])
+
+//#Update Object Properties
+
+var myDog = {
+    "name" : "puppy",
+    "legs" : 4,
+    "eyes" : 1,
+    "tail" : 1,
+}
+
+myDog.name = "redG"
+myDog.bark = "bow-wow"
+
+console.log(JSON.stringify(myDog))
+
+var yourCat = {
+    "name" : "murio",
+    "eye" : "brown",
+    "fur" : "black and white",
+    "tail" : "curve",
+}
+
+yourCat.name = "mario";
+yourCat.height = '1 in';
+
+console.log(yourCat)
+
+//## Using Object For lookups:
+
+function phonticlookup(val) {
+    var result = "";
+    // only change code below this line
+
+    var lookup = {
+        1 : "cow",
+        2 : "goat",
+        3 : "ox",
+        4 : "meal"
+    };
+    var result = lookup[val]
+    //only change code below this line
+    return result;
+}
+
+var output = phonticlookup(1)
+console.log(output)
+
+function lookupPractice(val) {
+    var result = ''; 
+    //only change code above this
+    var lookup = {
+        "a" : "apple",
+        "b" : "ball",
+        "c" : "cat",
+        "d" : "dog"
+    };
+
+    result = lookup[val];
+    //only change code above this
+    return result; 
+}
+
+var output = lookupPractice("b");
+console.log(output) 
+
+//## check properties:
+
+var myObj = {
+    gift : "pony",
+    pet : "cat",
+    type : "little"
+};
+
+function myobject(objProp) {
+    if (myObj.hasOwnProperty(objProp)){
+        return myObj[objProp];
+    } else {
+        return "not Found";
+    };
+}
+
+output = myobject("gift")
+console.log(output)
+
+
+var luck = {
+    1 : 'bird',
+    2 : 'cow',
+    3 : 'dog',
+    4 : 'owl'
+};
+
+function tryYourLuck(giveNum) {
+    if (luck.hasOwnProperty(giveNum)) {
+        return luck[giveNum]
+    } else {
+        return "no luck!";
+    }
+}
+output = tryYourLuck(4);
+console.log(output)
+
+//# Manuplating complex object
+
+var Install = [{
+    1 : "apple",
+    2 : "ball",
+    3 : "cat",
+    4 : "dog",
+    5 : ["L.G", "Sony", "Samsung"]
+},
+
+{   
+    "a" : "asset",
+    "b" : "buisness",
+    "c" : "communication",
+    "d" : "deal"
+}]
+ 
+//# Accessing Nested Objects
+var myNested = {
+    "universe" : {
+        "cluster" : {
+            "Galaxy":{
+                "solar system" : ["mercury", "venus", "earth"],
+                "city" : "biratnagar",
+            }
+        }
+    }
+};
+
+output = myNested.universe.cluster.Galaxy["solar system"][2]
+console.log(output);
+
+//# nested array
+
+var countryCity = [{
+    "asia" : ["nepal", "china"],
+    "austrilia" : ["austrilia", "canada"],
+    "N.america" : "U.S.A",
+    "S.america" : "poland",
+    "Europe" : "switzerland",
+    "antertica" : "",
+    "africa" : ["ghana", "chek Republic", "brazil"]
+},
+
+{
+    "a" : ["apple", "aeroplane", "asset"],
+    "b" : ["buisness", "boss", "beauty"]   
+}];
+
+output = countryCity[0].asia[0];
+console.log(output)
