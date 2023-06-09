@@ -241,7 +241,24 @@ console.log(myArray)
 console.log(`puss diff\nmyarray:${myArray}\nourArray:${ourArray}`)
 
 //##Manipulate Arrays with pop()
+var ourArray = ["hello", 23]
+ourArray.pop()
+console.log(ourArray)
 
+var myArray = [["apple", 12],["country, 19"]]
+myArray.pop()
+console.log(myArray)
 
+//## Manuplate Array with shift()
+
+var ourArray = ["hello", 23]
+console.log(ourArray.shift())
+console.log(ourArray)
+
+var myArray = [["apple", 12],["country, 19"]]
+console.log(myArray.shift())
+console.log(myArray)
+
+//## Muniplate Arrays with unshift()
 
 
