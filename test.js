@@ -183,16 +183,64 @@ full_name += last_name
 console.log(full_name.length)
 
 //#Bracket Notation to find First Character in String
+const lastName = 'gadal'
+const indexingLastName = lastName[0]
+console.log(indexingLastName)
 
 
+const firstName = 'pradip'
+const firstLetterOfFirstName = firstName.slice(2,4);
+console.log(firstLetterOfFirstName) 
 
+//##String Immutability
+var string = "jello world"
+/*String are immutable
+err: string[0] = 'H';
+*/
+string = "hello world"
+console.log(string)
 
+//## Bracket Notation to find last Character in string
+const FirstName = 'Pradip'
+var LastLetterOfFirstName = FirstName[FirstName.length-1]
+console.log(LastLetterOfFirstName)
 
+var sclicingTrick = FirstName.slice(2,FirstName.length)
+console.log(sclicingTrick)
 
+firstname = 'Pradip'
+console.log(`firstname = ${firstname}`)
 
+//##word_blank
+function wordBlanks(Noun, Adjective, Verb, Adverb)
+var result = ""
+result = `The ${Adjective} ${Noun}`
 
+//## Store Multiple Values with Arrays
+var ourArray = ["john", 23]
+console.log(ourArray[1])
 
+//## Nested Arrays or Multidimensional Array
+var myArray = [["the universe", 22], ["everything", 10]];
+console.log(`Access Multidimensional array: ${myArray[0][0]}`)
 
+console.log(`${myArray[1][0]}`);
+
+const ourArray = [[1,2,3],[4,5,6],[[1,4,8],9,0,4]];
+console.log(`ourArrayIndex=${ourArray[2][0]}`);
+console.log(ourArray[0][0]);
+
+//# Multiplate Arrays with push()
+var ourArray = ["pradip", "gadal", "job"]
+ourArray.push(["hapy"])
+console.log(ourArray)
+
+var myArray = [["apple", 12],["country, 19"]]
+myArray.push(["cat", 3])
+console.log(myArray)
+console.log(`puss diff\nmyarray:${myArray}\nourArray:${ourArray}`)
+
+//##Manipulate Arrays with pop()
 
 
 
