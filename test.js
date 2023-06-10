@@ -924,3 +924,166 @@ var countryCity = [{
 
 output = countryCity[0].asia[0];
 console.log(output)
+
+//## Record collection
+
+var collection = {
+    "1998" : {
+        "artist" : "linken park",
+        "album" : "unknown roar",
+        "track" : "let me die"
+    },
+    "2000" : {
+        "artist" : "system of down",
+        "album" : "psyco",
+        "track" : ["get me down", "psyco"]
+    },
+    "1995" : {
+        "artist" : "AC/DC",
+        "album" : ""
+    }
+}
+
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+function updateRecords(id, keys, value) {
+   if (value === "") {
+    delete collection[id][keys];
+   } else if (keys === "track") {
+    collection[id][keys] = collection[id][keys] || [];
+    collection[id][keys].push(value);
+   }else {
+    collection[id][keys] = value;
+   }
+    return collection;
+}
+
+output0 = updateRecords("2000", "track", "ressem" );
+console.log(output0)
+output1 = updateRecords("1995", "album", "")
+console.log(output1)
+
+
+function updateRecord(id, keys, values) {
+    if (values === "")  {
+        delete collection[id][keys]; 
+    } else if (keys === "track") {
+        collection[id][keys] = collection[id][keys] || [];
+        collection[id][keys].push(values);
+    } else {
+        collection[id][keys] = value;
+    }
+    return collection;
+}
+
+//## Iterate with while loops:
+
+var myArray = [];
+var J = 5;
+function whileLoop(J) {
+    var i = 0;
+    while (i < J){
+        myArray.push(i);
+        i++;
+    } return myArray;
+}
+
+console.log(whileLoop(10))
+
+//## Itrate with For loops:
+
+var MyArray = [];
+var value;
+function forLoops(values) {
+    for (var i=0; i < values; i++) {
+        MyArray.push(i)
+    } return MyArray;
+} 
+
+output0 = forLoops(10);
+console.log(output0)
+
+var OurArray = [];
+var values;
+function OddNumber(values) {
+    for (var i = 0; i < values; i+=2) {
+        OurArray.push(i);
+        }return OurArray;
+    } 
+
+Output0 = OddNumber(100);
+console.log(Output0)
+
+
+var EvenArray = [];
+for (var i = 1; i < 10; i+=2) {
+    EvenArray.push(i)
+}
+
+console.log(EvenArray)
+
+
+var list = [2, 5, 7, 9]
+var total = 0;
+for (var i = 0; i < list.length; i++) {
+    total += list[i];
+};
+console.log(total)
+
+
+
+var ourarray = [9,6,3,1];
+var ourTotal = 0;
+for (var i = 0; i < ourarray.length; i++){
+    ourTotal += ourarray[i];
+}
+
+console.log(ourTotal);
+
+
+var reverse = 10
+var even = []
+for (var i = 10; i > 0; i-=2) {
+    even.push(i)
+}
+
+console.log(even)
+
+var reverse = 100;
+var odd = [];
+for (var i = 101; i > 0; i-=2) {
+    odd.push(i);
+}
+
+console.log(odd);
+
+//## Nesting For Loops:
+
+function multiplyAll(arr) {
+    var product = 1;
+    for (var i =0; i< arr.length; i++) {
+        for (var j = 0; j<arr[i].length; j++){
+            product *= arr[i][j];
+        }
+    }return product;
+}
+
+
+var product = multiplyAll([[1,2],[2,3],[4,5]]);
+console.log(product)
+
+
+
+
+function MultipleArr(arr) {
+    var product = 1;
+    for (var i=0; i<arr.length; i++) {
+        for (var j=0; j<arr[i].length; j++) {
+            product*= arr[i][j];
+        }
+
+    }return product;
+}
+
+output = MultipleArr([[1],[2,2],[3,3,3],[4,4,4,4],[5,5,5,5,5]]);
+console.log(output)
