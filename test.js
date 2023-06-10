@@ -1087,3 +1087,312 @@ function MultipleArr(arr) {
 
 output = MultipleArr([[1],[2,2],[3,3,3],[4,4,4,4],[5,5,5,5,5]]);
 console.log(output)
+
+function addArr(arr) {
+    var sum = 0;
+    for (var i=0; i<arr.length; i++) {
+        for (var j = 0; j<arr[i].length; j++){
+            sum += arr[i][j];
+        }
+    }return sum
+}
+
+output = addArr([[1],[2,2],[3,3,3],[4,4,4,4]]);
+console.log(output)
+
+//## Do While loop:
+
+var givenNum = [];
+i = 10;
+do {
+    i++
+    givenNum.push(i)
+} while(i < 5);
+
+console.log(i, givenNum);
+
+//## Profile lookup:
+                                                                                  
+var profile = [{
+    "first_name": "pramila",
+    "last_name" : "gadal",
+    "ID" : "Nepali",
+    "hobby" : ["dancing", "speaking"]
+},
+{
+    "first_name" : "pradip",
+    "last_name" : "gadal",
+    "ID" : "Swiss",
+    "hobby": ["coding", "math", "physic"]
+},
+{
+    "first_name" : "Ishita",
+    "last_name" : "gadal",
+}
+]
+
+function Display(name, prop) {
+    for(var i=0;i<profile.length; i++) {
+        if (profile[i].first_name == name){
+            return profile[i][prop] || "No Properties availiable!";
+        } 
+    } return "name not found!";
+}
+
+output = Display("pradip", "hobby");
+console.log(output);
+
+
+//## Random math
+
+function randomFraction() {
+    return Math.random()
+}
+
+console.log(randomFraction())
+
+var WholeNum0to9 = Math.floor(Math.random()*10);
+
+function showNum() {
+    return WholeNum0to9;
+}
+console.log(showNum());
+
+
+function range(max,min) {
+    return Math.floor(Math.random()* (max-min+1)) + min;
+}
+
+console.log(range(20,10))
+
+
+function range1(max, min) {
+    return Math.floor(Math.random()*(max-min+1)) + min;
+}
+
+console.log(range1(10,5))
+
+//## using parseInt Function:
+
+function convertToString(str) {
+    return parseInt(str)
+}
+
+console.log(convertToString("99"))
+
+function convertToStrRadix(str){
+    return parseInt(str, 8);
+}
+
+console.log(convertToStrRadix(10344));
+
+//## Ternary Operator:
+
+function checkEqual(a,b){
+    if (a == b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(checkEqual(2,5))
+
+function Ternaryequall(a, b) {
+    return a == b ? true : false;
+}
+
+console.log(Ternaryequall(4,4))
+
+function TripleEquall(a, b) {
+    return a === b;
+}
+
+console.log(TripleEquall(4,4))
+
+//## use multiple condition(Ternary) Operators:
+
+function CheckNum(num) {
+    return num > 0 ? "Positive" : num < 0 ? "negative": "zero";
+    }
+
+console.log(CheckNum(22))
+
+function VoteFor(balan) {
+    return balan > 1000 ? "win" : balan < 1000 ? "loss" : "revote";
+}
+console.log(VoteFor(1000))
+
+//## Differences Between the var and let keywords:
+
+
+function diffLet() {
+    let i = "hello!";
+    if (true) {
+        let i = "hi!";
+        console.log(`${i} how are you?`);
+    }
+    console.log(`${i} how are you?`);
+} 
+diffLet();
+
+
+//## CONSTANT key:
+
+function CONSTKEY(str) {
+    const NAME = "Pradip";
+    for (var i=0; i<str.length; i++) {
+        console.log(`my name is ${NAME}`);
+    }
+
+}
+
+CONSTKEY("nap");
+
+//## MUtate an array declared with const:
+
+const s = [5, 7, 3]
+
+function editInPlace() {
+    "use strict";
+    s[0] = 2;
+    s[1] = 3;
+    s[4] = 5;
+}
+
+editInPlace()
+console.log(s)
+
+//## Prevent Mutation 
+
+function freezeObj() {
+    "use strict";
+    const MATH_CONSTANT = {
+        PI : 3.14,
+    }
+    Object.freeze(MATH_CONSTANT);
+    try {
+        MATH_CONSTANT.PI = 43;
+    } catch(ex) {
+        console.log(ex)
+    }
+    return MATH_CONSTANT.PI;
+}
+
+const PI = freezeObj();
+console.log(PI)
+
+
+function Freez() {
+    const AVG = 6.63;
+    Object.freeze(AVG);
+    if (true) {
+        let AVG = 33.3;
+    }
+    return AVG;
+}
+
+console.log(Freez())
+
+//## Use Arrow Functions to Write Concise Anonymous Functions:
+
+const ARROW = () => 'return';
+console.log(ARROW())
+
+//## Write Arrow Functions with Parameters:
+
+const MYCONCAT = (arr1, arr2) => arr1.concat(arr2)
+output = MYCONCAT([1,2,3,4], [3,4,5])
+console.log(output);
+
+//## Write Higher Order Arrow Functions:
+
+const realNumberArray = [4, -2, 3.3, 6, 24, 3.34, -12];
+
+const squareList = (arr) => {
+    const squrInteger = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x*x);
+    return squrInteger;
+}
+console.log(squareList(realNumberArray));
+
+
+//## write high order paramater:
+
+const increment = (function() {
+    return function increment(number, value = 1) {
+        return number + value;
+    };
+})();
+console.log(increment(5,2));
+console.log(increment(5));
+
+function increment(number, value = 1){
+    return number += value;
+};
+
+console.log(increment(5,2))
+console.log(increment(5))
+
+//## Rest Operator:
+const sum = (function(){
+    return function(...args){
+        return args.reduce((a,b) => a+b);
+    };
+})();
+console.log(sum(1,2,3,4))
+
+function multip(...args){
+    return args.reduce((a,b)=>a*b);
+};
+console.log(multip(1,2,3,4))
+
+//## Use the spread Operator to evaluate Arrays in-Place:
+
+const ARR1 = ['jan', 'feb', 'mar', 'april']
+let spreadOp = (function(){
+    arr2 = [...ARR1];
+    arr2.unshift("potato");
+})();
+console.log(ARR1);
+console.log(arr2);
+
+//# Use Destructuring Assignment ro assign variables from objects:
+
+const AVG_TEMP = {
+    today : 37,
+    tommorow : 39
+};
+
+function getTempOfTommorow(value){
+    const {tommorow:TempOfTommorow} = value;
+    return TempOfTommorow;
+};
+
+console.log(getTempOfTommorow(AVG_TEMP));
+
+const Fee = {
+    ariniko : 10,
+    Balmeeki : 20,
+};
+
+function FeeDestructuring(total){
+    const {ariniko : FeeValue} = total;
+    return FeeValue;
+};
+console.log(FeeDestructuring(Fee));
+
+//## Destructuring Assignment with Nested Objects:
+
+const TEMP = {
+    today : {max:36, min:26},
+    tommorow : {max:39, min:29}
+}
+
+function MaxTempNestedDestructuring(data){
+    const {tommorow:{max:temp}} = data;
+    return temp;
+}
+
+console.log(MaxTempNestedDestructuring(TEMP));
+
+//## Use Destructuring Assignment to Assign Variables From Arrays:
