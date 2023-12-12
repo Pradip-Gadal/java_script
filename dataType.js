@@ -20,4 +20,4 @@
 // console.log(output);
 
 
-
+console.log(typeof(null))   //null is a object dataType
